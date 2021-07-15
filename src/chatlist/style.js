@@ -1,7 +1,6 @@
 const styles = theme => ({
     root: {
-      backgroundColor: theme.palette.background.paper,
-      height: 'calc(100% - 35px)',
+      height: 'calc(100% - 40px)',
       position: 'absolute',
       left: '0',
       width: '300px',
@@ -11,7 +10,8 @@ const styles = theme => ({
       cursor: 'pointer'
     },
     newChatBtn: {
-      borderRadius: '0px'
+      borderRadius: '0px',
+      height: '50px'
     },
     unreadMessage: {
       color: 'red',

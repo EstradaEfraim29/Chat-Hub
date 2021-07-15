@@ -4,6 +4,12 @@ import ChatViewComponent from '../chatview/chatview';
 import ChatTextBoxComponent from '../chattextbox/chatTextBox';
 import NewChatComponent from'../newchat/newChat';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+
+
 import styles from './styles';
 import { Button, withStyles } from '@material-ui/core';
 
@@ -27,7 +33,19 @@ class DashboardComponent extends React.Component{
 
     if(this.state.email) {
       return(
-        <div className='dashboard-container' id='dashboard-container'>
+        <div>
+          <div className={classes.root}>
+              <AppBar position="static">
+                <Toolbar>
+                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                  </IconButton>
+                  <Typography variant="h6" className={classes.title}>
+                    Chat Hub
+                  </Typography>
+                  <Button  onClick={this.signOut} color="inherit">SignOut</Button>
+                </Toolbar>
+              </AppBar>
+            </div>
           <ChatListComponent history={this.props.history} 
             userEmail={this.state.email} 
             selectChatFn={this.selectChat} 
@@ -51,11 +69,13 @@ class DashboardComponent extends React.Component{
             <NewChatComponent goToChatFn={this.goToChat} newChatSubmitFn={this.newChatSubmit}>
             </NewChatComponent> : null
           }
-          <Button onClick={this.signOut} className={classes.signOutBtn}>Sign Out</Button>
         </div>
       );
     } else {
-      return(<div>LOADING....</div>);
+      return(<div>LOADING....</div>
+        
+        
+        );
     }
   }
 

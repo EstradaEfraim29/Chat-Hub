@@ -42,7 +42,7 @@ class ChatListComponent extends React.Component{
                   <React.Fragment>
                     <Typography component='span'
                       color='textPrimary'>
-                        {_chat.messages[_chat.messages.length - 1].message.substring(0, 30) + ' ...'}
+                        {_chat.messages[_chat.messages.length - 1].message.substring(0, 20) + ' ...'}
                     </Typography>
                   </React.Fragment>
                 }/>
